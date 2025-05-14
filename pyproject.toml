@@ -1,7 +1,21 @@
 [project]
 name = "lightningmcp"
 version = "0.1.0"
-description = "Add your description here"
+description = "Lightning-fast MCP framework for LLM-powered applications"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic[dotenv]",
+    "redis",
+    "redis[hiredis]",   # Recommended for performance
+    "faiss-cpu",        # Or faiss-gpu
+    "pymongo",
+    "sqlalchemy",       # For TimescaleDB or other relational DBs
+    "psycopg2-binary",  # PostgreSQL adapter
+]
+
+[build-system]
+requires = ["uv"]
+build-backend = "uv.build"
